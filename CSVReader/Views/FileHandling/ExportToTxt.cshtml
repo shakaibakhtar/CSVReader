@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ExportToTxt</title>
+</head>
+<body>
+    <div id="export">
+        <h1>Hello</h1>
+        <p>This is a tutorial showing how to write content in html tags into a text file and then download it.</p>
+    </div>
+    <button id="btnExport">Export to txt</button>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#btnExport').click(() => {
+            var str = "";
+            $('#export').children().each(function () {
+                str += $(this).text() + "\n";
+            });
+
+            var blob = new Blob([str],
+                {
+                    type: "application/json; utf-8"
+                }
+            )
+
+            var userlink = document.createElement('a');
+            userlink.setAttribute('download', 'text.txt');
+            userlink.setAttribute('href', window.URL.createObjectURL(blob));
+            userlink.click();
+        });
+    </script>
+
+</body>
+</html>
