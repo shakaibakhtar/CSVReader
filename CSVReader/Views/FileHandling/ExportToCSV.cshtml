@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ExportToCSV</title>
+</head>
+<body>
+    <div id="export">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Roll Num</th>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>1</td>
+                <td>001</td>
+            </tr>
+            <tr>
+                <td>Nasir</td>
+                <td>1</td>
+                <td>002</td>
+            </tr>
+            <tr>
+                <td>Aleem</td>
+                <td>1</td>
+                <td>003</td>
+            </tr>
+        </table>
+    </div>
+    <button id="btnExport">Export to .csv</button>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#btnExport').click(() => {
+            var str = "";
+            $('#export table tr').each(function () {
+                var check = false;
+                $(this).children().filter('td').each(function () {
+                    str += $(this).text();
+                    //alert(''+((!$(this).is(':last-child'))));
+                    if (!$(this).is(':last-child'))
+                        str += ",";
+                });
+                if (!$(this).children().first().is("th")) {
+                    str += "\n";
+                }
+            });
+
+            //alert(str);
+
+            var blob = new Blob([str],
+                {
+                    type: "application/json; utf-8"
+                }
+            )
+
+            var userlink = document.createElement('a');
+            userlink.setAttribute('download', 'text.csv');
+            userlink.setAttribute('href', window.URL.createObjectURL(blob));
+            userlink.click();
+        });
+    </script>
+
+</body>
+</html>
