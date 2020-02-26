@@ -1,0 +1,97 @@
+﻿@model IEnumerable<CSVReader.Models.UploadsVM>
+
+@{
+    ViewBag.Title = "UploadFile";
+}
+
+<h2>UploadFile</h2>
+
+@using (Html.BeginForm("UploadImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.TextBox("file", "", new { type = "file" })
+
+        <input type="submit" value="Upload" style="margin-top: 0.25rem;" />
+
+        @ViewBag.Message
+
+    </div>
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 1px gray solid;
+        padding: 4px;
+        width: 5em;
+    }
+</style>
+
+<div id="docx" style="margin-top: 3rem;">
+    <h1>Hello</h1>
+    <div class="WordSection1" >
+        <table>
+            <tr>
+                <th>File Name</th>
+                <th>File Path</th>
+                <th>Download</th>
+            </tr>
+            @if (Model != null)
+            {
+                foreach (var file in Model)
+                {
+                    <tr>
+                        <td>@file.fileName</td>
+                        <td>@file.filePath</td>
+                        <td><a href="~/Uploads/@file.fileName" download=@file.fileName>Download</a></td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
+<button id="export" style="margin-top: 0.25rem;">Export</button>
+
+<script type="text/javascript">
+    window.export.onclick = function () {
+
+        if (!window.Blob) {
+            alert('Your legacy browser does not support this action.');
+            return;
+        }
+
+        var html, link, blob, url, css;
+
+        // EU A4 use: size: 841.95pt 595.35pt;
+        // US Letter use: size:11.0in 8.5in;
+
+        //css = '';
+        css = (
+            '<style>' +
+            '@@page WordSection1{size: 841.95pt 595.35pt;mso-page-orientation: landscape;}' +
+            'div.WordSection1 {page: WordSection1;}' +
+            'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;}' +
+            '</style>'
+        );
+
+        html = window.docx.innerHTML;
+        //html = '<div class="WordSection1"><h1>Hello</h1></div>';
+        blob = new Blob(['\ufeff', css + html], {
+            type: 'application/msword'
+        });
+        url = URL.createObjectURL(blob);
+        link = document.createElement('A');
+        link.href = url;
+        // Set default file name.
+        // Word will append file extension - do not add an extension here.
+        link.download = 'Document';
+        document.body.appendChild(link);
+        if (navigator.msSaveOrOpenBlob) navigator.msSaveOrOpenBlob(blob, 'Document.doc'); // IE10-11
+        else link.click();  // other browsers
+        document.body.removeChild(link);
+    };
+
+</script>
