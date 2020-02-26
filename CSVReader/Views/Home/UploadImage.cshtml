@@ -9,13 +9,15 @@
 @using (Html.BeginForm("UploadImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div>
-        @Html.TextBox("file", "", new { type = "file" })
+        @Html.TextBox("file", "", new { type = "file", id = "imgInp" })
 
         <input type="submit" value="Upload" style="margin-top: 0.25rem;" />
 
         @ViewBag.Message
 
     </div>
+
+    <img id="blah" src="#" height="150px" width="200px" style="margin-top: 1.5rem;" alt="your image" />
 }
 
 <style>
@@ -32,7 +34,7 @@
 
 <div id="docx" style="margin-top: 3rem;">
     <h1>Hello</h1>
-    <div class="WordSection1" >
+    <div class="WordSection1">
         <table>
             <tr>
                 <th>File Name</th>
@@ -45,7 +47,14 @@
                 {
                     <tr>
                         <td>@file.fileName</td>
-                        <td>@file.filePath</td>
+                        @if (file.filePath.EndsWith("jpg") || file.filePath.EndsWith("jpeg") || file.filePath.EndsWith("png"))
+                        {
+                            <td><img src="~/Uploads/@file.fileName" alt="img not found" height="150px" width="200px" /></td>
+                        }
+                        else
+                        {
+                            <td>~/Uploads/@file.fileName</td>
+                        }
                         <td><a href="~/Uploads/@file.fileName" download=@file.fileName>Download</a></td>
                     </tr>
                 }
@@ -55,6 +64,24 @@
 </div>
 <button id="export" style="margin-top: 0.25rem;">Export</button>
 
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgInp").change(function () {
+        readURL(this);
+    });
+</script>
 <script type="text/javascript">
     window.export.onclick = function () {
 
