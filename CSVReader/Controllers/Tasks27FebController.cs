@@ -17,6 +17,8 @@ namespace CSVReader.Controllers
          3- Show gradient on header nav li active
          4- Show gallery with open image in modal on click with nextand previous buttons
          5- Create a button on click create ad download sa zip of any folder on server (Install dotnetzip first: Install-Package DotNetZip -Version 1.13.6)
+         6- Rotate, Flip, Zoom functionality in modal
+         7- Sidebar
          */
 
         // GET: Tasks27Feb

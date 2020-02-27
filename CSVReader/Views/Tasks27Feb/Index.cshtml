@@ -73,6 +73,49 @@
                 width: 900px;
             }
         }
+
+        /* ---------------------------------------------------  Gallery Section End -----------------------------------------------------------------------*/
+        /* ---------------------------------------------------  Side Nav Start -----------------------------------------------------------------------*/
+
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+            .sidenav a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+        .main {
+            margin-left: 160px; /* Same as the width of the sidenav */
+            /*font-size: 28px;*/ /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        @@media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
     </style>
 </head>
 <body>
@@ -96,86 +139,90 @@
         };
         ShowProgress();
     </script>
-    <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="/tasks27feb/download">Download</a></li>
-    </ul>
-    <div class="hero">
-        <div class="highway"></div>
-        <div class="city"></div>
-        <div class="car">
-            <img src="~/Content/Images/moving_car_images/car.png" />
+    <div class="sidenav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="main">
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="/tasks27feb/download">Download</a></li>
+        </ul>
+        <div class="hero">
+            <div class="highway"></div>
+            <div class="city"></div>
+            <div class="car">
+                <img src="~/Content/Images/moving_car_images/car.png" />
+            </div>
+            <div class="wheel">
+                <img src="~/Content/Images/moving_car_images/wheel.png" class="back-wheel" />
+                <img src="~/Content/Images/moving_car_images/wheel.png" class="front-wheel" />
+            </div>
         </div>
-        <div class="wheel">
-            <img src="~/Content/Images/moving_car_images/wheel.png" class="back-wheel" />
-            <img src="~/Content/Images/moving_car_images/wheel.png" class="front-wheel" />
+        <div class="container">
+            <h1 class="text-center">Gallery</h1>
+            <div class="row">
+                <div class="col-md-3 p-md-2 mt-3">
+                    <div class="mag">
+                        <a href="#" class="pop">
+                            <img src="~/Content/Gallery_Images/agent-1.jpg" style="width: 100% !important; height: auto !important;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 p-md-2 mt-3">
+                    <div class="mag">
+                        <a href="#" class="pop">
+                            <img src="~/Content/Gallery_Images/agent-2.jpg" style="width: 100% !important; height: auto !important;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 p-md-2 mt-3">
+                    <div class="mag">
+                        <a href="#" class="pop">
+                            <img src="~/Content/Gallery_Images/agent-3.jpg" style="width: 100% !important; height: auto !important;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 p-md-2 mt-3">
+                    <div class="mag">
+                        <a href="#" class="pop">
+                            <img src="~/Content/Gallery_Images/agent-4.jpg" style="width: 100% !important; height: auto !important;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 p-md-2 mt-3">
+                    <div class="mag">
+                        <a href="#" class="pop">
+                            <img src="~/Content/Gallery_Images/agent-5.jpg" style="width: 100% !important; height: auto !important;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 p-md-2 mt-3">
+                    <div class="mag">
+                        <a href="#" class="pop">
+                            <img src="~/Content/Gallery_Images/agent-6.jpg" style="width: 100% !important; height: auto !important;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 p-md-2 mt-3">
+                    <div class="mag">
+                        <a href="#" class="pop">
+                            <img src="~/Content/Gallery_Images/agent-7.jpg" style="width: 100% !important; height: auto !important;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 p-md-2 mt-3">
+                    <div class="mag">
+                        <a href="#" class="pop">
+                            <img src="~/Content/Gallery_Images/agent-8.jpg" style="width: 100% !important; height: auto !important;">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="container">
-        <h1 class="text-center">Gallery</h1>
-        <div class="row">
-            <div class="col-md-3 p-md-2 mt-3">
-                <div class="mag">
-                    <a href="#" class="pop">
-                        <img src="~/Content/Gallery_Images/agent-1.jpg" style="width: 100% !important; height: auto !important;">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 p-md-2 mt-3">
-                <div class="mag">
-                    <a href="#" class="pop">
-                        <img src="~/Content/Gallery_Images/agent-2.jpg" style="        width: 100% !important;
-        height: auto !important;
-">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 p-md-2 mt-3">
-                <div class="mag">
-                    <a href="#" class="pop">
-                        <img src="~/Content/Gallery_Images/agent-3.jpg" style="width: 100% !important; height: auto !important;">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 p-md-2 mt-3">
-                <div class="mag">
-                    <a href="#" class="pop">
-                        <img src="~/Content/Gallery_Images/agent-4.jpg" style="width: 100% !important; height: auto !important;">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 p-md-2 mt-3">
-                <div class="mag">
-                    <a href="#" class="pop">
-                        <img src="~/Content/Gallery_Images/agent-5.jpg" style="width: 100% !important; height: auto !important;">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 p-md-2 mt-3">
-                <div class="mag">
-                    <a href="#" class="pop">
-                        <img src="~/Content/Gallery_Images/agent-6.jpg" style="width: 100% !important; height: auto !important;">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 p-md-2 mt-3">
-                <div class="mag">
-                    <a href="#" class="pop">
-                        <img src="~/Content/Gallery_Images/agent-7.jpg" style="width: 100% !important; height: auto !important;">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 p-md-2 mt-3">
-                <div class="mag">
-                    <a href="#" class="pop">
-                        <img src="~/Content/Gallery_Images/agent-8.jpg" style="width: 100% !important; height: auto !important;">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="lds-dual-ring"></div>
 
 
     <!-- IMPORTANT NOTE: THIS IMAGE BELOW IS JUST FOR THE PURPOSE TO SHOE THE LOADER BECAUSE IT TAKES TIME TO LOAD -->
@@ -185,10 +232,9 @@
     <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-body" style="height: 90%;">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <img src="" class="imagepreview" style="        width: 100%;
-        padding: 3%;">
+                    <img src="" class="imagepreview" style="width: 100%; max-height: 90%; padding: 0 3%;">
                     <i id="prev-img" class="glyphicon glyphicon-arrow-left"></i>
                     <i id="next-img" class="glyphicon glyphicon-arrow-right"></i>
                 </div>
@@ -198,6 +244,7 @@
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.5.0/viewer.min.js"></script>*@
     <script>
         $(function () {
             $('.pop').on('click', function () {
