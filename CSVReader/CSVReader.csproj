@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.13.6.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.13.6\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -147,6 +150,7 @@
     <Compile Include="Controllers\ExportCVController.cs" />
     <Compile Include="Controllers\FileHandlingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Tasks27FebController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,7 +191,23 @@
     <Content Include="Content\CV_CSS\style.css" />
     <Content Include="Content\CV_Images\avt.png" />
     <Content Include="Content\CV_Images\g4.jpg" />
+    <Content Include="Content\Gallery_Images\agent-1.jpg" />
+    <Content Include="Content\Gallery_Images\agent-2.jpg" />
+    <Content Include="Content\Gallery_Images\agent-3.jpg" />
+    <Content Include="Content\Gallery_Images\agent-4.jpg" />
+    <Content Include="Content\Gallery_Images\agent-5.jpg" />
+    <Content Include="Content\Gallery_Images\agent-6.jpg" />
+    <Content Include="Content\Gallery_Images\agent-7.jpg" />
+    <Content Include="Content\Gallery_Images\agent-8.jpg" />
+    <Content Include="Content\Images\loader.gif" />
+    <Content Include="Content\Images\moving_car_images\car.png" />
+    <Content Include="Content\Images\moving_car_images\city.png" />
+    <Content Include="Content\Images\moving_car_images\road.jpg" />
+    <Content Include="Content\Images\moving_car_images\sky.jpg" />
+    <Content Include="Content\Images\moving_car_images\wheel.png" />
     <Content Include="Content\Images\team-awais.jpg" />
+    <Content Include="Content\Task27Feb_CSS\moving-car.css" />
+    <Content Include="Content\Task27Feb_CSS\nav-gradient.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -257,6 +277,7 @@
     <Content Include="Views\ExportCV\_CV.cshtml" />
     <Content Include="Views\FileHandling\ExportToTxt.cshtml" />
     <Content Include="Views\FileHandling\ExportToCSV.cshtml" />
+    <Content Include="Views\Tasks27Feb\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

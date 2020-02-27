@@ -1,0 +1,251 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Task 27 Feb</title>
+
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/Task27Feb_CSS/moving-car.css" />
+    <link rel="stylesheet" href="~/Content/Task27Feb_CSS/nav-gradient.css" />
+    <style>
+        /*.modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: black;
+            z-index: 99;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            -moz-opacity: 0.8;
+            min-height: 100%;
+            width: 100%;
+        }*/
+
+        .loading {
+            font-family: Arial;
+            font-size: 10pt;
+            border: 5px solid #67CFF5;
+            width: 200px;
+            height: 100px;
+            display: none;
+            position: fixed;
+            background-color: White;
+            z-index: 999;
+        }
+
+        /*<style>*/
+        .col-md-3 {
+            border: 2px solid transparent;
+            padding: 0;
+            transition: all 0.5s;
+            border-radius: 5px;
+        }
+
+            .col-md-3:hover {
+                border-color: #008080;
+                cursor: pointer;
+            }
+
+        .mag img {
+            border-radius: 5px;
+        }
+
+        #prev-img, #next-img {
+            top: 50%;
+            position: absolute;
+            font-size: 2.9em;
+            color: #756b6b;
+            cursor: pointer;
+        }
+
+        #prev-img {
+            left: 0;
+        }
+
+        #next-img {
+            right: 0;
+        }
+
+        @@media (min-width: 768px) {
+            .modal-dialog {
+                width: 900px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" align="center">
+        Loading. Please wait.<br />
+        <br />
+        <img src="~/Content/Images/loader.gif" alt="" />
+    </div>
+    <script type="text/javascript">
+        var modal, loading;
+        function ShowProgress() {
+            modal = document.createElement("DIV");
+            modal.className = "modal";
+            document.body.appendChild(modal);
+            loading = document.getElementsByClassName("loading")[0];
+            loading.style.display = "block";
+            var top = Math.max(window.innerHeight / 2 - loading.offsetHeight / 2, 0);
+            var left = Math.max(window.innerWidth / 2 - loading.offsetWidth / 2, 0);
+            loading.style.top = top + "px";
+            loading.style.left = left + "px";
+        };
+        ShowProgress();
+    </script>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="/tasks27feb/download">Download</a></li>
+    </ul>
+    <div class="hero">
+        <div class="highway"></div>
+        <div class="city"></div>
+        <div class="car">
+            <img src="~/Content/Images/moving_car_images/car.png" />
+        </div>
+        <div class="wheel">
+            <img src="~/Content/Images/moving_car_images/wheel.png" class="back-wheel" />
+            <img src="~/Content/Images/moving_car_images/wheel.png" class="front-wheel" />
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Gallery</h1>
+        <div class="row">
+            <div class="col-md-3 p-md-2 mt-3">
+                <div class="mag">
+                    <a href="#" class="pop">
+                        <img src="~/Content/Gallery_Images/agent-1.jpg" style="width: 100% !important; height: auto !important;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 p-md-2 mt-3">
+                <div class="mag">
+                    <a href="#" class="pop">
+                        <img src="~/Content/Gallery_Images/agent-2.jpg" style="        width: 100% !important;
+        height: auto !important;
+">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 p-md-2 mt-3">
+                <div class="mag">
+                    <a href="#" class="pop">
+                        <img src="~/Content/Gallery_Images/agent-3.jpg" style="width: 100% !important; height: auto !important;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 p-md-2 mt-3">
+                <div class="mag">
+                    <a href="#" class="pop">
+                        <img src="~/Content/Gallery_Images/agent-4.jpg" style="width: 100% !important; height: auto !important;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 p-md-2 mt-3">
+                <div class="mag">
+                    <a href="#" class="pop">
+                        <img src="~/Content/Gallery_Images/agent-5.jpg" style="width: 100% !important; height: auto !important;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 p-md-2 mt-3">
+                <div class="mag">
+                    <a href="#" class="pop">
+                        <img src="~/Content/Gallery_Images/agent-6.jpg" style="width: 100% !important; height: auto !important;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 p-md-2 mt-3">
+                <div class="mag">
+                    <a href="#" class="pop">
+                        <img src="~/Content/Gallery_Images/agent-7.jpg" style="width: 100% !important; height: auto !important;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 p-md-2 mt-3">
+                <div class="mag">
+                    <a href="#" class="pop">
+                        <img src="~/Content/Gallery_Images/agent-8.jpg" style="width: 100% !important; height: auto !important;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lds-dual-ring"></div>
+
+
+    <!-- IMPORTANT NOTE: THIS IMAGE BELOW IS JUST FOR THE PURPOSE TO SHOE THE LOADER BECAUSE IT TAKES TIME TO LOAD -->
+    <img src="//farm6.static.flickr.com/5299/5400751421_55d49b2786_o.jpg" style="width: 100%; display:none; height: auto;">
+    <!-- IMPORTANT NOTE: THE IMAGE ABOVE IS JUST FOR THE PURPOSE TO SHOE THE LOADER BECAUSE IT TAKES TIME TO LOAD -->
+
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="" class="imagepreview" style="        width: 100%;
+        padding: 3%;">
+                    <i id="prev-img" class="glyphicon glyphicon-arrow-left"></i>
+                    <i id="next-img" class="glyphicon glyphicon-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('.pop').on('click', function () {
+                $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+                $('#imagemodal').modal();
+            });
+        });
+    </script>
+    <script>
+        $('#prev-img').on('click', function () {
+            var src = $('.imagepreview').attr('src');
+            var img_num = parseInt(src.charAt(src.length - 5));
+
+            var total_images = parseInt($('.pop').length);
+
+            if (img_num === 1) {
+                img_num = 8;
+            }
+            else {
+                img_num--;
+            }
+            src = '/Content/Gallery_Images/agent-' + img_num + '.jpg';
+            $('.imagepreview').attr('src', src);
+        });
+        $('#next-img').on('click', function () {
+            var src = $('.imagepreview').attr('src');
+            var img_num = parseInt(src.charAt(src.length - 5));
+
+            var total_images = parseInt($('.pop').length);
+
+            if (img_num < total_images) {
+                img_num++;
+            }
+            else {
+                img_num = 1;
+            }
+            src = '/Content/Gallery_Images/agent-' + img_num + '.jpg';
+            $('.imagepreview').attr('src', src);
+        });
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(function () {
+                document.body.removeChild(modal);
+                loading.style.display = "none";
+            }, 2000);
+        };
+    </script>
+</body>
+</html>
