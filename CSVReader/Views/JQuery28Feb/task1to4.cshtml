@@ -29,6 +29,8 @@
             <textarea type="text" placeholder="Enter your Message" id="frmMessage" required></textarea>
             <input type="submit" value="submit" id="submit" />
         </form>
+
+        <select class="form-control" id="departmentsDropdown" name="departmentsDropdown"></select>
     </div>
     <script>
         $('.jqte-test').jqte();
@@ -99,6 +101,21 @@
                 });
             }
         );
+    </script>
+
+    <script>
+        $.ajax({  
+           type: "GET",  
+           url: "/jquery28Feb/getListOfPeopleContactedUs",  
+           data: "{}",  
+           success: function (data) {  
+               var s = '<option value="-1">Please Select a Name</option>';  
+               for (var i = 0; i < data.length; i++) {  
+                   s += '<option value="' + data[i].ID + '">' + data[i].Name + '</option>';  
+               }  
+               $("#departmentsDropdown").html(s);  
+           }  
+       });  
     </script>
 </body>
 </html>

@@ -65,5 +65,14 @@ namespace CSVReader.Controllers
             }
             return new JsonResult { Data = new { status = status } };
         }
+
+        public JsonResult getListOfPeopleContactedUs()
+        {
+            return Json(db.PeopleWhoContactUs.Select(x => new
+            {
+                ID = x.ID,
+                Name = x.Name
+            }).ToList(), JsonRequestBehavior.AllowGet);
+        }
     }
 }
