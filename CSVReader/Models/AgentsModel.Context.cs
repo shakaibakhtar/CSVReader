@@ -27,5 +27,6 @@ namespace CSVReader.Models
     
         public virtual DbSet<RegisterContact> RegisterContacts { get; set; }
         public virtual DbSet<Upload> Uploads { get; set; }
+        public virtual DbSet<PeopleWhoContactU> PeopleWhoContactUs { get; set; }
     }
 }

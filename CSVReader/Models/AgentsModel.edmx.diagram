@@ -7,6 +7,7 @@
       <Diagram DiagramId="74e5edb734044bd5b2545179835ecc3d" Name="Diagram1">
         <EntityTypeShape EntityType="AgentsRecordsModel.RegisterContact" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AgentsRecordsModel.Upload" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AgentsRecordsModel.PeopleWhoContactU" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

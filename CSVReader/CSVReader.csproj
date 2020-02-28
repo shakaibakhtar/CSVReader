@@ -150,6 +150,7 @@
     <Compile Include="Controllers\ExportCVController.cs" />
     <Compile Include="Controllers\FileHandlingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JQuery28FebController.cs" />
     <Compile Include="Controllers\Tasks27FebController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -168,6 +169,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AgentsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactUsVm.cs" />
+    <Compile Include="Models\PeopleWhoContactU.cs">
+      <DependentUpon>AgentsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RegisterContact.cs">
       <DependentUpon>AgentsModel.tt</DependentUpon>
@@ -199,6 +204,7 @@
     <Content Include="Content\Gallery_Images\agent-6.jpg" />
     <Content Include="Content\Gallery_Images\agent-7.jpg" />
     <Content Include="Content\Gallery_Images\agent-8.jpg" />
+    <Content Include="Content\Images\jquery-te.png" />
     <Content Include="Content\Images\loader.gif" />
     <Content Include="Content\Images\moving_car_images\car.png" />
     <Content Include="Content\Images\moving_car_images\city.png" />
@@ -208,6 +214,8 @@
     <Content Include="Content\Images\team-awais.jpg" />
     <Content Include="Content\Task27Feb_CSS\moving-car.css" />
     <Content Include="Content\Task27Feb_CSS\nav-gradient.css" />
+    <Content Include="Content\Task28Feb_CSS\jquery-te-1.4.0.css" />
+    <Content Include="Scripts\Task28Feb_JS\jquery-te-1.4.0.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -278,6 +286,7 @@
     <Content Include="Views\FileHandling\ExportToTxt.cshtml" />
     <Content Include="Views\FileHandling\ExportToCSV.cshtml" />
     <Content Include="Views\Tasks27Feb\Index.cshtml" />
+    <Content Include="Views\JQuery28Feb\task1to4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
