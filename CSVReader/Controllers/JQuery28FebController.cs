@@ -16,7 +16,7 @@ namespace CSVReader.Controllers
         /*
          Tasks for 28th Feb, 2020
 
-        1- Jquery Rich Textbox (jqueryte plugin)
+        1- Jquery Rich Textbox (jqueryte plugin css file & js file)
         2- Modify DOM (Change button color etc)
         3- Validations (If textbox is empty change it's border color and bg to red)
         4- Contact us form submit with validations
@@ -24,9 +24,9 @@ namespace CSVReader.Controllers
         6- Append to DOM Insert(), InsertAfter(), InsertBefore(), Before()
         7- External JS
         8- Add table in DOM using JQuery
-        9- ProgressBar Jquery
+        9- ProgressBar Jquery (jquery-ui-1.12.1 css file & js file)
         10- CRUD in Table using jquery ajax
-        11- JQuery Datatable
+        11- JQuery Datatable (datatables plugin css file & js file)
         12- Textbox that only accepts number jquery
         13- Hide website while loading and loader is showing.
         14- Urdu Keyboard
@@ -46,11 +46,21 @@ namespace CSVReader.Controllers
             return View();
         }
 
+        public ActionResult task9to10()
+        {
+            return View();
+        }
+
+        public ActionResult task11to13()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult contact_submit(ContactUsVm user)
         {
             bool status = false;
-            if(user != null)
+            if (user != null)
             {
                 try
                 {
@@ -80,5 +90,108 @@ namespace CSVReader.Controllers
                 Name = x.Name
             }).ToList(), JsonRequestBehavior.AllowGet);
         }
+
+        #region CRUD
+
+        public ActionResult getListOfPeople()
+        {
+            try
+            {
+                List<ContactUsVm> abc = (from a in db.PeopleWhoContactUs
+                                         select new ContactUsVm
+                                         {
+                                             id = a.ID,
+                                             name = a.Name,
+                                             email = a.Email,
+                                             message = a.Message
+                                         }).ToList();
+
+                return View(abc);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+            }
+            return View();
+        }
+
+        public JsonResult add(ContactUsVm contact)
+        {
+            bool status = false;
+
+            try
+            {
+                var dbContact = new PeopleWhoContactU();
+
+                dbContact.Name = contact.name;
+                dbContact.Email = contact.email;
+                dbContact.Message = contact.message;
+
+                db.PeopleWhoContactUs.Add(dbContact);
+                db.SaveChanges();
+
+                status = true;
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+            }
+
+            return new JsonResult { Data = new { status = status } };
+        }
+
+        public JsonResult edit(ContactUsVm contact)
+        {
+            bool status = false;
+
+            try
+            {
+                var dbContact = db.PeopleWhoContactUs.Where(x => x.ID == contact.id).FirstOrDefault();
+
+                if (dbContact != null)
+                {
+                    dbContact.Name = contact.name;
+                    dbContact.Email = contact.email;
+                    dbContact.Message = contact.message;
+
+                    db.SaveChanges();
+
+                    status = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+            }
+
+            return new JsonResult { Data = new { status = status } };
+        }
+
+        public JsonResult remove(int id)
+        {
+            bool status = false;
+
+            try
+            {
+                var dbContact = db.PeopleWhoContactUs.Where(x => x.ID == id).FirstOrDefault();
+
+                if (dbContact != null)
+                {
+                    db.PeopleWhoContactUs.Remove(dbContact);
+                    db.SaveChanges();
+
+                    status = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+            }
+
+            return new JsonResult { Data = new { status = status } };
+        }
+
+        #endregion
+
     }
 }

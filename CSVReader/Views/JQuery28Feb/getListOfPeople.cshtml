@@ -1,0 +1,291 @@
+﻿@using CSVReader.Models
+@model List<ContactUsVm>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CRUD with Jquery</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+
+    <style>
+        .parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .child {
+            display: inline-block;
+        }
+
+        i.child {
+            font-size: 20px;
+        }
+
+        h4.child {
+            margin-top: 14px;
+        }
+
+        .glyphicon-edit {
+            color: #FFC107;
+        }
+
+        .glyphicon-plus-sign {
+            color: #5bc0de;
+        }
+
+        .glyphicon-question-sign {
+            color: #FFBC00;
+        }
+
+        .glyphicon-info-sign {
+            color: #286090;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-info pull-right" style="padding: 6px;" id="btnAdd" data-toggle="modal" data-target="#myModal">
+            <i class="glyphicon glyphicon-plus-sign" style="font-size: 22px; top: 2px; color: #fff;"></i>
+        </button>
+        <table class="table table-bordered">
+            <tr>
+                <th class="text-center">Sr.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th class="text-center">Actions</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-center">@item.id</td>
+                    <td>@item.name</td>
+                    <td>@item.email</td>
+                    <td>@item.message</td>
+                    <td class="text-center">
+                        <a href="javascript:void(0)" class="btnEdit"><i class="glyphicon glyphicon-edit" style="color: #FFC107;"></i></a>
+                        <a href="javascript:void(0)" class="btnDelete"><i class="glyphicon glyphicon-remove" style="color: #DC3545;"></i></a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="parent">
+                        <i class="child glyphicon glyphicon-plus-sign" id="addEditIcon" style="display: inline-block; "></i>
+                        <h4 class="modal-title child" style="margin-top: 6px;">&nbsp;Edit</h4>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form action="javascript:void(0)">
+                        <div class="form-group">
+                            <input type="text" id="frmID" hidden />
+                            <input class="form-control" style="display: inline; width: 49%; " type="text" placeholder="Your name" id="frmName" />
+                            <input class="form-control" style="display: inline; width: 49%; margin-left: 1%;" type="email" placeholder="Your email" id="frmEmail" />
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message"
+                                      type="text" style="resize: none;" rows="7" id="frmMessage"></textarea>
+                        </div>
+                        <div class="parent" style="justify-content: flex-end;">
+                            <button type="submit" id="btnSubmit" class="btn btn-success child" data-toggle="modal" data-target="#alert" data-dismiss="modal">Submit</button>
+                            <button type="submit" id="btnUpdate" class="btn btn-success child" data-toggle="modal" data-target="#alert" data-dismiss="modal">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="confirmation" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="parent">
+                        <i class="child glyphicon glyphicon-question-sign" style="display: inline-block;"></i>
+                        <h4 class="child">&nbsp;Confirmation</h4>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h3>Are you sure you want to delete this record?</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnYes" class="btn btn-success" data-toggle="modal" data-target="#alert" data-dismiss="modal">Yes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="alert" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="parent">
+                        <i class="child glyphicon glyphicon-info-sign" style="display: inline-block;"></i>
+                        <h4 class="child">&nbsp;Notification</h4>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h3 id="note"></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnDismiss" class="btn btn-success" data-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#btnAdd').click(function () {
+                $('#btnUpdate').hide();
+                $('#btnSubmit').show();
+
+                $('#frmID').val('');
+                $('#frmName').val('');
+                $('#frmEmail').val('');
+                $('#frmMessage').val('');
+                $('#addEditIcon').removeClass('glyphicon-edit');
+                $('#addEditIcon').addClass('glyphicon-plus-sign');
+                $('.modal-title').html('&nbsp;Add');
+            });
+            $('.btnEdit').click(function () {
+                $('#btnUpdate').show();
+                $('#btnSubmit').hide();
+                $('#addEditIcon').addClass('glyphicon-edit');
+                $('#addEditIcon').removeClass('glyphicon-plus-sign');
+
+                var $row = jQuery(this).closest('tr');
+                var $columns = $row.find('td');
+
+                $('#frmID').val($row.find("td:eq(0)").text());
+                $('#frmName').val($row.find("td:eq(1)").text());
+                $('#frmEmail').val($row.find("td:eq(2)").text());
+                $('#frmMessage').val($row.find("td:eq(3)").text());
+                $('.modal-title').html('&nbsp;Edit');
+
+                $('#myModal').modal('toggle');
+            });
+
+
+            var check = "";
+            $('#btnSubmit').click(function () {
+                check = "add";
+                addOrUpdate(check);
+            });
+
+            $('#btnUpdate').click(function () {
+                check = "edit";
+                addOrUpdate(check);
+            });
+
+            function addOrUpdate(check) {
+                var id = "";
+                if (check === "edit") {
+                    id = $('#frmID').val();
+                }
+                //ajax call
+                var name = $('#frmName').val();
+                var email = $('#frmEmail').val();
+                var message = $('#frmMessage').val();
+
+                var user = {};
+
+                if (check === "edit") {
+                    user = {
+                        id: id,
+                        name: name,
+                        email: email,
+                        message: message
+                    }
+                }
+                else {
+                    user = {
+                        name: name,
+                        email: email,
+                        message: message
+                    }
+                }
+
+                $.ajax({
+                    url: '/JQuery28Feb/' + check,
+                    type: 'POST',
+                    data: user,
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.status == true) {
+                            $('#note').text('Record ' + check + 'ed successfully.');
+                        }
+                        else {
+                            $('#note').text('Error! Please try again later.');
+                        }
+                    },
+                    error: function (data) {
+                        $('#note').text(data.status + 'Error! Please try again later.');
+                    }
+                })
+            }
+        });
+
+        $('.btnDelete').click(function () {
+            var $row = jQuery(this).closest('tr');
+            var $columns = $row.find('td');
+
+            var id = $row.find("td:eq(0)").text();
+            $('#confirmation').modal('toggle');
+            $('#btnYes').click(function () {
+                $.ajax({
+                    url: '/JQuery28Feb/remove',
+                    type: 'POST',
+                    data: { id: id },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.status == true) {
+                            $('#note').text('Record deleted successfully.');
+                        }
+                        else {
+                            $('#note').text('An error occured. Please try again later.');
+                        }
+                    },
+                    error: function (data) {
+                        $('#note').text(data.status + ",,, error function");
+                    }
+                })
+            });
+        });
+
+        $('#btnDismiss').click(function () {
+            location.reload();
+        });
+    </script>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

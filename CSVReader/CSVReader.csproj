@@ -214,7 +214,10 @@
     <Content Include="Content\Images\team-awais.jpg" />
     <Content Include="Content\Task27Feb_CSS\moving-car.css" />
     <Content Include="Content\Task27Feb_CSS\nav-gradient.css" />
+    <Content Include="Content\Task28Feb_CSS\datatables.min.css" />
     <Content Include="Content\Task28Feb_CSS\jquery-te-1.4.0.css" />
+    <Content Include="Content\Task28Feb_CSS\jquery-ui.min.css" />
+    <Content Include="Scripts\Task28Feb_JS\datatables.min.js" />
     <Content Include="Scripts\Task28Feb_JS\jquery-te-1.4.0.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -263,6 +266,7 @@
     <Content Include="Scripts\JS_For_Export\jquery-1.11.js" />
     <Content Include="Scripts\JS_For_Export\jquery.wordexport.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Task28Feb_JS\jquery-ui.min.js" />
     <Content Include="Scripts\Task28Feb_JS\task6to8.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -289,6 +293,9 @@
     <Content Include="Views\Tasks27Feb\Index.cshtml" />
     <Content Include="Views\JQuery28Feb\task1to5.cshtml" />
     <Content Include="Views\JQuery28Feb\task6to8.cshtml" />
+    <Content Include="Views\JQuery28Feb\task9to10.cshtml" />
+    <Content Include="Views\JQuery28Feb\getListOfPeople.cshtml" />
+    <Content Include="Views\JQuery28Feb\task11to13.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

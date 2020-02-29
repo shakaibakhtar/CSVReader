@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>task9to12</title>
+    <link rel="stylesheet" href="~/Content/Task28Feb_CSS/jquery-ui.min.css">
+    @*<link rel="stylesheet" href="/resources/demos/style.css">*@
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/Task28Feb_JS/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $("#progressbar").progressbar({
+                value: 37
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.increase').click(function () {
+                var progressValue = $("#progressbar").progressbar('value');
+                $("#progressbar").progressbar({
+                    value: (progressValue + 1)
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="progressbar"></div>
+    <button class="increase">Add</button>
+</body>
+</html>
