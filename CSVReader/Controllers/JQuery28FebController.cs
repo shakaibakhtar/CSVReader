@@ -21,7 +21,7 @@ namespace CSVReader.Controllers
         3- Validations (If textbox is empty change it's border color and bg to red)
         4- Contact us form submit with validations
         5- Populate select option with jquery ajax
-        6- Append to DOM, InsertAfter, InsertBefore, Before
+        6- Append to DOM Insert(), InsertAfter(), InsertBefore(), Before()
         7- External JS
         8- Add table in DOM using JQuery
         9- ProgressBar Jquery
@@ -29,13 +29,19 @@ namespace CSVReader.Controllers
         11- JQuery Datatable
         12- Textbox that only accepts number jquery
         13- Hide website while loading and loader is showing.
+        14- Urdu Keyboard
          */
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult task1to4()
+        public ActionResult task1to5()
+        {
+            return View();
+        }
+
+        public ActionResult task6to8()
         {
             return View();
         }

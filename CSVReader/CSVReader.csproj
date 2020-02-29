@@ -263,6 +263,7 @@
     <Content Include="Scripts\JS_For_Export\jquery-1.11.js" />
     <Content Include="Scripts\JS_For_Export\jquery.wordexport.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Task28Feb_JS\task6to8.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -286,7 +287,8 @@
     <Content Include="Views\FileHandling\ExportToTxt.cshtml" />
     <Content Include="Views\FileHandling\ExportToCSV.cshtml" />
     <Content Include="Views\Tasks27Feb\Index.cshtml" />
-    <Content Include="Views\JQuery28Feb\task1to4.cshtml" />
+    <Content Include="Views\JQuery28Feb\task1to5.cshtml" />
+    <Content Include="Views\JQuery28Feb\task6to8.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
