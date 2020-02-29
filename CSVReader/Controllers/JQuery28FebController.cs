@@ -26,7 +26,7 @@ namespace CSVReader.Controllers
         8- Add table in DOM using JQuery
         9- ProgressBar Jquery (jquery-ui-1.12.1 css file & js file)
         10- CRUD in Table using jquery ajax
-        11- JQuery Datatable (datatables plugin css file & js file)
+        11- JQuery Datatable (datatables plugin css file, js file & icon images)
         12- Textbox that only accepts number jquery
         13- Hide website while loading and loader is showing.
         14- Urdu Keyboard

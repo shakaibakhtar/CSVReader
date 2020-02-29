@@ -204,6 +204,11 @@
     <Content Include="Content\Gallery_Images\agent-6.jpg" />
     <Content Include="Content\Gallery_Images\agent-7.jpg" />
     <Content Include="Content\Gallery_Images\agent-8.jpg" />
+    <Content Include="Content\Images\datatables_images\sort_asc.png" />
+    <Content Include="Content\Images\datatables_images\sort_asc_disabled.png" />
+    <Content Include="Content\Images\datatables_images\sort_both.png" />
+    <Content Include="Content\Images\datatables_images\sort_desc.png" />
+    <Content Include="Content\Images\datatables_images\sort_desc_disabled.png" />
     <Content Include="Content\Images\jquery-te.png" />
     <Content Include="Content\Images\loader.gif" />
     <Content Include="Content\Images\moving_car_images\car.png" />

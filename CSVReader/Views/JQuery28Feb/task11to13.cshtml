@@ -9,8 +9,171 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>task11to13</title>
+
+    <link rel="stylesheet" href="~/Content/Task28Feb_CSS/datatables.min.css" />
 </head>
 <body>
-    
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ahmad</td>
+                <td>Ahmad@email.com</td>
+                <td>Hi I am Ahmad.</td>
+            </tr>
+            <tr>
+                <td>Nasir</td>
+                <td>Nasir@email.com</td>
+                <td>Hi I am Nasir.</td>
+            </tr>
+            <tr>
+                <td>Shoaib</td>
+                <td>Shoaib@email.com</td>
+                <td>Hi I am Shoaib.</td>
+            </tr>
+            <tr>
+                <td>Sherry</td>
+                <td>Sherry@email.com</td>
+                <td>Hi I am Sherry.</td>
+            </tr>
+            <tr>
+                <td>Hameed</td>
+                <td>Hameed@email.com</td>
+                <td>Hi I am Hameed.</td>
+            </tr>
+            <tr>
+                <td>Babar</td>
+                <td>Babar@email.com</td>
+                <td>Hi I am Babar.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>ali@email.com</td>
+                <td>Hi I am Ali.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="margin-top: 20px;">
+        <input type="text" class="number" />
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/Task28Feb_JS/datatables.min.js"></script>
+    <script>
+        var table = $('#example').DataTable();
+
+        $('#example tbody').on('click', 'tr', function () {
+            var data = table.row(this).data();
+            alert('You clicked on ' + data[0] + '\'s row');
+        });
+
+        $('.number').keypress(function (event) {
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
