@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/Task27Feb_CSS/moving-car.css" />
     <link rel="stylesheet" href="~/Content/Task27Feb_CSS/nav-gradient.css" />
+    <link rel="stylesheet" href="~/Content/CSS_For_Gallery/viewer.css" />
     <style>
         /*.modal {
             position: fixed;
@@ -102,10 +103,10 @@
                     color: #fff;
                 }
 
-            .dropdown-container > a {
-                padding: 0 15px;
-                font-size: 1.3em;
-            }
+        .dropdown-container > a {
+            padding: 0 15px;
+            font-size: 1.3em;
+        }
 
         .main {
             margin-left: 160px; /* Same as the width of the sidenav */
@@ -182,63 +183,73 @@
         </div>
         <div class="container">
             <h1 class="text-center">Gallery</h1>
-            <div class="row">
-                <div class="col-md-3 p-md-2 mt-3">
-                    <div class="mag">
-                        <a href="#" class="pop">
-                            <img src="~/Content/Gallery_Images/agent-1.jpg" style="width: 100% !important; height: auto !important;">
-                        </a>
+            <div style="width: 100%;">
+                <ul id="image">
+                    <li class="col-md-3 p-md-2 mt-3"><img src="~/Content/Gallery_Images/agent-1.jpg" style="width: 100% !important; height: auto !important;"></li>
+                    <li class="col-md-3 p-md-2 mt-3"><img src="~/Content/Gallery_Images/agent-2.jpg" style="width: 100% !important; height: auto !important;"></li>
+                    <li class="col-md-3 p-md-2 mt-3"><img src="~/Content/Gallery_Images/agent-3.jpg" style="width: 100% !important; height: auto !important;"></li>
+                    <li class="col-md-3 p-md-2 mt-3"><img src="~/Content/Gallery_Images/agent-4.jpg" style="width: 100% !important; height: auto !important;"></li>
+                    <li class="col-md-3 p-md-2 mt-3"><img src="~/Content/Gallery_Images/agent-5.jpg" style="width: 100% !important; height: auto !important;"></li>
+                    <li class="col-md-3 p-md-2 mt-3"><img src="~/Content/Gallery_Images/agent-6.jpg" style="width: 100% !important; height: auto !important;"></li>
+                    <li class="col-md-3 p-md-2 mt-3"><img src="~/Content/Gallery_Images/agent-7.jpg" style="width: 100% !important; height: auto !important;"></li>
+                    <li class="col-md-3 p-md-2 mt-3"><img src="~/Content/Gallery_Images/agent-8.jpg" style="width: 100% !important; height: auto !important;"></li>
+                </ul>
+                @*<div class="col-md-3 p-md-2 mt-3">
+                        <div class="mag">
+                            <a href="#" class="pop">
+                                <img src="~/Content/Gallery_Images/agent-1.jpg" style="width: 100% !important; height: auto !important;">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-md-2 mt-3">
-                    <div class="mag">
-                        <a href="#" class="pop">
-                            <img src="~/Content/Gallery_Images/agent-2.jpg" style="width: 100% !important; height: auto !important;">
-                        </a>
+                    <div class="col-md-3 p-md-2 mt-3">
+                        <div class="mag">
+                            <a href="#" class="pop">
+                                <img src="~/Content/Gallery_Images/agent-2.jpg" style="width: 100% !important; height: auto !important;">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-md-2 mt-3">
-                    <div class="mag">
-                        <a href="#" class="pop">
-                            <img src="~/Content/Gallery_Images/agent-3.jpg" style="width: 100% !important; height: auto !important;">
-                        </a>
+                    <div class="col-md-3 p-md-2 mt-3">
+                        <div class="mag">
+                            <a href="#" class="pop">
+                                <img src="~/Content/Gallery_Images/agent-3.jpg" style="width: 100% !important; height: auto !important;">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-md-2 mt-3">
-                    <div class="mag">
-                        <a href="#" class="pop">
-                            <img src="~/Content/Gallery_Images/agent-4.jpg" style="width: 100% !important; height: auto !important;">
-                        </a>
+                    <div class="col-md-3 p-md-2 mt-3">
+                        <div class="mag">
+                            <a href="#" class="pop">
+                                <img src="~/Content/Gallery_Images/agent-4.jpg" style="width: 100% !important; height: auto !important;">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-md-2 mt-3">
-                    <div class="mag">
-                        <a href="#" class="pop">
-                            <img src="~/Content/Gallery_Images/agent-5.jpg" style="width: 100% !important; height: auto !important;">
-                        </a>
+                    <div class="col-md-3 p-md-2 mt-3">
+                        <div class="mag">
+                            <a href="#" class="pop">
+                                <img src="~/Content/Gallery_Images/agent-5.jpg" style="width: 100% !important; height: auto !important;">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-md-2 mt-3">
-                    <div class="mag">
-                        <a href="#" class="pop">
-                            <img src="~/Content/Gallery_Images/agent-6.jpg" style="width: 100% !important; height: auto !important;">
-                        </a>
+                    <div class="col-md-3 p-md-2 mt-3">
+                        <div class="mag">
+                            <a href="#" class="pop">
+                                <img src="~/Content/Gallery_Images/agent-6.jpg" style="width: 100% !important; height: auto !important;">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-md-2 mt-3">
-                    <div class="mag">
-                        <a href="#" class="pop">
-                            <img src="~/Content/Gallery_Images/agent-7.jpg" style="width: 100% !important; height: auto !important;">
-                        </a>
+                    <div class="col-md-3 p-md-2 mt-3">
+                        <div class="mag">
+                            <a href="#" class="pop">
+                                <img src="~/Content/Gallery_Images/agent-7.jpg" style="width: 100% !important; height: auto !important;">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 p-md-2 mt-3">
-                    <div class="mag">
-                        <a href="#" class="pop">
-                            <img src="~/Content/Gallery_Images/agent-8.jpg" style="width: 100% !important; height: auto !important;">
-                        </a>
-                    </div>
-                </div>
+                    <div class="col-md-3 p-md-2 mt-3">
+                        <div class="mag">
+                            <a href="#" class="pop">
+                                <img src="~/Content/Gallery_Images/agent-8.jpg" style="width: 100% !important; height: auto !important;">
+                            </a>
+                        </div>
+                    </div>*@
             </div>
         </div>
     </div>
@@ -263,7 +274,217 @@
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.5.0/viewer.min.js"></script>*@
+    <script src="~/Scripts/JS_For_Gallery/viewer.js"></script>
+    <script src="~/Scripts/JS_For_Gallery/jquery-viewer.js"></script>
+
+    <script>
+        // As a Vanilla JS plugin
+        const viewer = new Viewer(document.getElementById('image'), {
+
+            backdrop: true,
+
+            button: true,
+
+            navbar: true,
+
+            title: true,
+
+            toolbar: true,
+
+            className: '',
+
+            container: 'body',
+
+            filter: null,
+
+            fullscreen: true,
+
+            initialViewIndex: 0,
+
+            inline: false,
+
+            interval: 5000,
+
+            keyboard: true,
+
+            loading: true,
+
+            loop: true,
+
+            minWidth: 200,
+
+            minHeight: 100,
+
+            movable: true,
+
+            rotatable: true,
+
+            scalable: true,
+
+            zoomable: true,
+
+            zoomOnTouch: true,
+
+            zoomOnWheel: true,
+
+            slideOnTouch: true,
+
+            toggleOnDblclick: true,
+
+            tooltip: true,
+
+            transition: true,
+
+            zIndex: 2015,
+
+            zIndexInline: 0,
+
+            zoomRatio: 0.1,
+
+            minRatio: 0.01,
+
+            maxZoomRatio: 100,
+
+            url: 'src',
+
+            ready: null,
+            show: null,
+            shown: null,
+            hide: null,
+            hidden: null,
+            view: null,
+            viewed: null,
+            zoom: null,
+            zoomed: null
+        });
+
+        // show the viewer immediately or not
+        viewer.show(boolean);
+
+        // hide the viewer immediately or not
+        viewer.hide(boolean);
+
+        // view the second image
+        viewer.view(1);
+
+        // previous image
+        viewer.prev([loop = false]);
+
+        // next image
+        viewer.next([loop = false]);
+
+        // play the image gallery in fullscreen or not
+        viewer.play(boolean);
+
+        // stop the autoplay
+        viewer.stop();
+
+        // enter fullscreen modal mode
+        viewer.full();
+
+        // exit fullscreen modal mode
+        viewer.exit();
+
+        // show the current ratio of the image with percentage.
+        viewer.tooltip();
+
+        // toggle the image size between its natural size and initial size.
+        viewer.toggle();
+
+        // reset the plugin.
+        viewer.reset();
+
+        // up<a href="https://www.jqueryscript.net/time-clock/">date</a> the plugin.
+        viewer.reset();
+
+        // destroy the plugin
+        viewer.destroy();
+
+        // move images
+        viewer.move(1);
+        viewer.move(-1, 0); // Move left
+        viewer.move(1, 0);  // Move right
+        viewer.move(0, -1); // Move up
+        viewer.move(0, 1);  // Move down
+
+        // Move the image to an absolute point.
+        // x: The left value of the image
+        // y: The top value of the image
+        viewer.moveTo(x, y)
+
+        // zoom in / out the image
+        viewer.zoom(0.1);
+
+        // zoom the image to a special ratio with or without tooltip
+        viewer.zoomTo(0); // Zoom to zero size (0%)
+        viewer.zoomTo(1); // Zoom to natural size (100%)
+        viewer.zoomTo(.5, true);
+        viewer.zoomTo(.5, false);
+
+        // rotate the image using CSS3 transform property
+        viewer.rotate(90);
+        viewer.rotateTo(360); // Rotate a full round
+
+        // flip the image using CSS3 transform property
+        viewer.scale(-1); // <a href="https://www.jqueryscript.net/tags.php?/Flip/">Flip</a> both horizontal and vertical
+        viewer.scale(-1, 1); // Flip horizontal
+        viewer.scale(1, -1); // Flip vertical
+
+        // scale the image using CSS3 transform property
+        viewer.scaleX(-1); // Flip horizontal
+        viewer.scaleY(-1); // Flip vertical
+
+        // Vanilla JavaScript
+        image.addEventListener(Event, function () { });
+
+        // jQuery
+        image.on(Event, function () { });
+
+        image.addEventListener('viewed', function () {
+            // do something
+        });
+
+        image.addEventListener('ready', function () {
+            // do something
+        });
+
+        image.addEventListener('show', function () {
+            // do something
+        });
+
+        image.addEventListener('shown', function () {
+            // do something
+        });
+
+        image.addEventListener('hide', function () {
+            // do something
+        });
+
+        image.addEventListener('hidden', function () {
+            // do something
+        });
+
+        image.addEventListener('view', function () {
+            // event.detail.originalImage
+            // event.detail.index
+            // event.detail.image
+        });
+
+        image.addEventListener('viewed', function () {
+            // event.detail
+        });
+
+        image.addEventListener('zoom', function () {
+            // event.detail.originalEvent
+            // event.detail.oldRatio
+            // event.detail.ratio
+        });
+
+        image.addEventListener('zoomed', function () {
+            // event.detail
+        });
+    </script>
+
     <script>
         $(function () {
             $('.pop').on('click', function () {
